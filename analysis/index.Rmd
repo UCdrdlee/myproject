@@ -14,7 +14,7 @@ Welcome to my first workflowr project.
 data <- read.csv("data/OldFaithful_geyser.csv")
 ```
 
-The data shows average eruption length (in minutes) of each of 272 geysers in the Old Faithful on the first column and average time between each eruption. Let's take a look at top portion of the data. And compute descriptive statistics for each column.
+The data shows average eruption length (in minutes) of each of 272 geysers in the Old Faithful at the Yellowstone National Park, WY,  on the first column and average wait time (also in minutes) between each eruption. Let's take a look at top portion of the data. And compute descriptive statistics for each column.
 
 ```{r}
 head(data)
@@ -32,4 +32,12 @@ It looks like both variables have bimodal distribution. Let's see if these two b
 plot(data$X.Eruption.length..mins..,data$Eruption.wait..mins..,xlab = "Eruption Length (min)", ylab = "Eruption wait time (min)")
 ```
 
+It looks like they are highly correlated. Let's do a linear regression to quantify the fit.
+
+```{r}
+fit <- lm(Eruption.wait..mins.. ~ X.Eruption.length..mins.., data = data)
+summary(fit)
+```
+
+How close the datapoints to the fitted line? As our r-squared number, `r summary(fit)$r.squared` , shows, they are pretty close to the fitted line, suggesting a strong positive correlation between Eruption wait time and Eruption length. 
 

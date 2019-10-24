@@ -314,7 +314,7 @@ div.section {
 
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
-<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span>
 </button>
 </p>
 <div id="workflowr-report" class="collapse">
@@ -323,7 +323,7 @@ div.section {
 <a data-toggle="tab" href="#summary">Summary</a>
 </li>
 <li>
-<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> </a>
+<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> </a>
 </li>
 <li>
 <a data-toggle="tab" href="#versions">Past versions</a>
@@ -335,7 +335,7 @@ div.section {
 <strong>Last updated:</strong> 2019-10-24
 </p>
 <p>
-<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
+<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 6 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 1
 </p>
 <p>
 <strong>Knit directory:</strong> <code>myproject/</code> <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="This is the local directory in which the code in this file was executed."> </span>
@@ -351,12 +351,12 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges"> <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> <strong>R Markdown file:</strong> uncommitted changes </a>
 </p>
 </div>
-<div id="strongRMarkdownfilestronguptodate" class="panel-collapse collapse">
+<div id="strongRMarkdownfilestronguncommittedchanges" class="panel-collapse collapse">
 <div class="panel-body">
-<p>Great! Since the R Markdown file has been committed to the Git repository, you know the exact version of the code that produced these results.</p>
+<p>The R Markdown file has unstaged changes. To know which version of the R Markdown file created these results, you’ll want to first commit it to the Git repo. If you’re still working on the analysis, you can ignore this warning. When you’re finished, you can run <code>wflow_publish</code> to commit the R Markdown file and build the HTML.</p>
 </div>
 </div>
 </div>
@@ -423,10 +423,10 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomUCdrdleemyprojecttree5a76deaaa74f90bc8c8830839d50b21040f0dea8targetblank5a76deaa"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/UCdrdlee/myproject/tree/5a76deaaa74f90bc8c8830839d50b21040f0dea8" target="_blank">5a76dea</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomUCdrdleemyprojecttreef470b2769b4f3d065569b4116dd06b36c6291361targetblankf470b27a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/UCdrdlee/myproject/tree/f470b2769b4f3d065569b4116dd06b36c6291361" target="_blank">f470b27</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomUCdrdleemyprojecttree5a76deaaa74f90bc8c8830839d50b21040f0dea8targetblank5a76deaa" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomUCdrdleemyprojecttreef470b2769b4f3d065569b4116dd06b36c6291361targetblankf470b27a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility. The version displayed above was the version of the Git repository at the time these results were generated. <br><br> Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -439,6 +439,9 @@ Ignored files:
 
 Untracked files:
     Untracked:  HW1_2.R
+
+Unstaged changes:
+    Modified:   analysis/index.Rmd
 
 </code></pre>
 <p>
@@ -477,6 +480,23 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/UCdrdlee/myproject/f470b2769b4f3d065569b4116dd06b36c6291361/docs/index.html" target="_blank">f470b27</a>
+</td>
+<td>
+UCdrdlee
+</td>
+<td>
+2019-10-24
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -554,7 +574,7 @@ Start workflowr project.
 </div>
 <p>Welcome to my first workflowr project.</p>
 <pre class="r"><code>data &lt;- read.csv(&quot;data/OldFaithful_geyser.csv&quot;)</code></pre>
-<p>The data shows average eruption length (in minutes) of each of 272 geysers in the Old Faithful on the first column and average time between each eruption. Let’s take a look at top portion of the data. And compute descriptive statistics for each column.</p>
+<p>The data shows average eruption length (in minutes) of each of 272 geysers in the Old Faithful at the Yellowstone National Park, WY, on the first column and average wait time (also in minutes) between each eruption. Let’s take a look at top portion of the data. And compute descriptive statistics for each column.</p>
 <pre class="r"><code>head(data)</code></pre>
 <pre><code>  X.Eruption.length..mins.. Eruption.wait..mins..
 1                     3.600                    79
@@ -690,6 +710,29 @@ UCdrdlee
 </table>
 </div>
 </div>
+<p>It looks like they are highly correlated. Let’s do a linear regression to quantify the fit.</p>
+<pre class="r"><code>fit &lt;- lm(Eruption.wait..mins.. ~ X.Eruption.length..mins.., data = data)
+summary(fit)</code></pre>
+<pre><code>
+Call:
+lm(formula = Eruption.wait..mins.. ~ X.Eruption.length..mins.., 
+    data = data)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-12.0796  -4.4831   0.2122   3.9246  15.9719 
+
+Coefficients:
+                          Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)                33.4744     1.1549   28.98   &lt;2e-16 ***
+X.Eruption.length..mins..  10.7296     0.3148   34.09   &lt;2e-16 ***
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 5.914 on 270 degrees of freedom
+Multiple R-squared:  0.8115,    Adjusted R-squared:  0.8108 
+F-statistic:  1162 on 1 and 270 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>How close the datapoints to the fitted line? As our r-squared number, 0.8114608 , shows, they are pretty close to the fitted line, suggesting a strong positive correlation between Eruption wait time and Eruption length.</p>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
