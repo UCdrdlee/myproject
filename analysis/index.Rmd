@@ -8,4 +8,28 @@ editor_options:
   chunk_output_type: console
 ---
 
-Welcome to my research website.
+Welcome to my first workflowr project.
+
+```{r}
+data <- read.csv("data/OldFaithful_geyser.csv")
+```
+
+The data shows average eruption length (in minutes) of each of 272 geysers in the Old Faithful on the first column and average time between each eruption. Let's take a look at top portion of the data. And compute descriptive statistics for each column.
+
+```{r}
+head(data)
+summary(data)
+```
+
+Let's plot distributions for each column and a scatterplot to see if they show any correlation.
+```{r}
+hist(data$X.Eruption.length..mins.., main="Histogram of Eruption length")
+hist(data$Eruption.wait..mins.., main="Histogram of Eruption wait")
+```
+
+It looks like both variables have bimodal distribution. Let's see if these two bimodal distributions are correlated.
+```{r}
+plot(data$X.Eruption.length..mins..,data$Eruption.wait..mins..,xlab = "Eruption Length (min)", ylab = "Eruption wait time (min)")
+```
+
+
